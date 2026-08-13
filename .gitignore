@@ -1,0 +1,11 @@
+# Block Vivado temp directories
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.ioplanning/
+
+# Block tool log and journal files
+*.log
+*.jou
+*.str
