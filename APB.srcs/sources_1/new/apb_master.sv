@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps 
+`timescale 1ns / 1ps
 module apb_master #( 
     parameter int WIDTH = 32, 
     parameter int ADDR_WIDTH = 4 
@@ -32,8 +32,8 @@ state_t state, next_state;
 logic [ADDR_WIDTH-1:0] addr_reg;
 logic [WIDTH-1:0]      wdata_reg;
 logic                  write_reg;
-//transaction complete
-assign done = (state == access) && pready;
+
+assign done = (state == access) && pready;//transaction complete
 always_ff @(posedge pclk or negedge preset_n) begin 
     if (!preset_n) begin 
         state     <= idle; 
@@ -93,5 +93,4 @@ always_comb begin
         default: ; // idle: all defaults above 
     endcase 
 end 
-//what happends to read or write data, how to seperate them 
 endmodule
